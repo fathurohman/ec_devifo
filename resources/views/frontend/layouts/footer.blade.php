@@ -5,11 +5,11 @@
 		<div class="footer-top section">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-5 col-md-6 col-12">
+					<div class="col-lg-6 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img src="{{asset('backend/img/logo2.png')}}" alt="#"></a>
+								<a href="index.html"><img width="50%" src="{{asset('images/devifo.jpg')}}" alt="#"></a>
 							</div>
 							@php
 								$settings=DB::table('settings')->get();
@@ -19,7 +19,7 @@
 						</div>
 						<!-- End Single Widget -->
 					</div>
-					<div class="col-lg-2 col-md-6 col-12">
+					{{-- <div class="col-lg-2 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer links">
 							<h4>Information</h4>
@@ -32,8 +32,8 @@
 							</ul>
 						</div>
 						<!-- End Single Widget -->
-					</div>
-					<div class="col-lg-2 col-md-6 col-12">
+					</div> --}}
+					{{-- <div class="col-lg-2 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer links">
 							<h4>Customer Service</h4>
@@ -46,8 +46,8 @@
 							</ul>
 						</div>
 						<!-- End Single Widget -->
-					</div>
-					<div class="col-lg-3 col-md-6 col-12">
+					</div> --}}
+					<div class="col-lg-6 col-md-6 col-12">
 						<!-- Single Widget -->
 						<div class="single-footer social">
 							<h4>Get In Tuch</h4>

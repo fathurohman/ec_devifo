@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || PRODUCT PAGE')
+@section('title','Devifo || Product')
 
 @section('main-content')
 	<!-- Breadcrumbs -->
@@ -85,9 +85,9 @@
                                     </div>
                                     <!--/ End Shop By Price -->
                                 <!-- Single Widget -->
-                                <div class="single-widget recent-post">
+                                {{-- <div class="single-widget recent-post">
                                     <h3 class="title">Recent post</h3>
-                                    {{-- {{dd($recent_products)}} --}}
+                                   
                                     @foreach($recent_products as $product)
                                         <!-- Single Post -->
                                         @php
@@ -108,10 +108,10 @@
                                         </div>
                                         <!-- End Single Post -->
                                     @endforeach
-                                </div>
+                                </div> --}}
                                 <!--/ End Single Widget -->
                                 <!-- Single Widget -->
-                                <div class="single-widget category">
+                                {{-- <div class="single-widget category">
                                     <h3 class="title">Brands</h3>
                                     <ul class="categor-list">
                                         @php
@@ -121,7 +121,7 @@
                                             <li><a href="{{route('product-brand',$brand->slug)}}">{{$brand->title}}</a></li>
                                         @endforeach
                                     </ul>
-                                </div>
+                                </div> --}}
                                 <!--/ End Single Widget -->
                         </div>
                     </div>

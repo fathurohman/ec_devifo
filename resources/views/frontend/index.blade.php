@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','E-SHOP || HOME PAGE')
+@section('title','Devifo || Home ')
 @section('main-content')
 <!-- Slider Area -->
 {{-- @if(count($banners)>0)
@@ -36,7 +36,7 @@
 <!--/ End Slider Area -->
 
 <!-- Start Small Banner  -->
-<section class="small-banner section">
+{{-- <section class="small-banner section">
     <div class="container-fluid">
         <div class="row">
             @php
@@ -65,19 +65,19 @@
             @endif
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Small Banner -->
 
 <!-- Start Product Area -->
 <div class="product-area section">
         <div class="container">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12">
                     <div class="section-title">
                         <h2>Trending Item</h2>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row">
                 <div class="col-12">
                     <div class="product-info">
@@ -89,12 +89,12 @@
                                     // dd($categories);
                                 @endphp
                                 @if($categories)
-                                <button class="btn" style="background:black"data-filter="*">
+                                <button class="btn" style=""data-filter="*">
                                     All Products
                                 </button>
                                     @foreach($categories as $key=>$cat)
 
-                                    <button class="btn" style="background:none;color:black;"data-filter=".{{$cat->id}}">
+                                    <button class="btn" style=""data-filter=".{{$cat->id}}">
                                         {{$cat->title}}
                                     </button>
                                     @endforeach
@@ -106,7 +106,7 @@
                              <!-- Start Single Tab -->
                             @if($product_lists)
                                 @foreach($product_lists as $key=>$product)
-                                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{$product->cat_id}}">
+                                <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{$product->cat_id}}">
                                     <div class="single-product">
                                         <div class="product-img">
                                             <a href="{{route('product-detail',$product->slug)}}">
@@ -168,7 +168,7 @@
     $featured=DB::table('products')->where('is_featured',1)->where('status','active')->orderBy('id','DESC')->limit(1)->get();
 @endphp --}}
 <!-- Start Midium Banner  -->
-<section class="midium-banner">
+{{-- <section class="midium-banner">
     <div class="container">
         <div class="row">
             @if($featured)
@@ -192,11 +192,11 @@
             @endif
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Midium Banner -->
 
 <!-- Start Most Popular -->
-<div class="product-area most-popular section">
+{{-- <div class="product-area most-popular section">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -220,7 +220,7 @@
                                     @endphp
                                     <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                     <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                    {{-- <span class="out-of-stock">Hot</span> --}}
+                                    <!-- <span class="out-of-stock">Hot</span> -->
                                 </a>
                                 <div class="button-head">
                                     <div class="product-action">
@@ -250,11 +250,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- End Most Popular Area -->
 
 <!-- Start Shop Home List  -->
-<section class="shop-home-list section">
+{{-- <section class="shop-home-list section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
@@ -300,11 +300,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Shop Home List  -->
 
 <!-- Start Shop Blog  -->
-<section class="shop-blog section">
+{{-- <section class="shop-blog section">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -333,14 +333,14 @@
 
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Shop Blog  -->
 
 <!-- Start Shop Services Area -->
 <section class="shop-services section home">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-3 col-md-6 col-3">
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-rocket"></i>
@@ -349,7 +349,7 @@
                 </div>
                 <!-- End Single Service -->
             </div>
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-3 col-md-6 col-3">
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-reload"></i>
@@ -358,7 +358,7 @@
                 </div>
                 <!-- End Single Service -->
             </div>
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-3 col-md-6 col-3">
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-lock"></i>
@@ -367,7 +367,7 @@
                 </div>
                 <!-- End Single Service -->
             </div>
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-3 col-md-6 col-3">
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-tag"></i>
@@ -380,8 +380,8 @@
     </div>
 </section>
 <!-- End Shop Services Area -->
-
-@include('frontend.layouts.newsletter')
+{{-- 
+@include('frontend.layouts.newsletter') --}}
 
 <!-- Modal -->
 @if($product_lists)

@@ -182,7 +182,7 @@ Version:1.0
 	font-weight: 500;
 	font-size:14px;
 	color: #fff;
-	background: #333;
+	background: #110066;
 	display: inline-block;
 	-webkit-transition: all 0.4s ease;
 	-moz-transition: all 0.4s ease;
@@ -190,12 +190,12 @@ Version:1.0
 	z-index: 5;
 	display: inline-block;
 	padding: 13px 32px;
-	border-radius: 0px;
+	border-radius: 15px;
 	text-transform:uppercase;
 }
 .btn:hover{
-	color:#fff;
-	background:#F7941D;
+	color:#505050;
+	background:#fdd331;
 }
 #scrollUp {
 	right: 10px;
@@ -388,7 +388,7 @@ Version:1.0
 	display: inline-block;
 	margin-right: 4px;
 	font-size: 15px;
-	color: #F7941D;
+	color: #4b35b6;
 	position: relative;
 	top: 3px;
 }
@@ -407,7 +407,7 @@ Version:1.0
 	display: inline-block;
 	margin-right: 4px;
 	font-size: 15px;
-	color: #F7941D;
+	color: #4b35b6;
 	position: relative;
 	top: 1px;
 }
@@ -419,7 +419,7 @@ Version:1.0
 	color:#333;
 }
 .header.shop .list-main li a:hover{
-	color:#F7941D;
+	color:#4327d0;
 }
 .header.shop .nav li {
 	margin-right: 40px;
@@ -685,7 +685,7 @@ Version:1.0
 	font-weight: 400;
 }
 .header.shop .nice-select .list li:hover{
-	background:#F7941D;
+	background:#110066;
 	color:#fff;
 }
 .header.shop .search-bar form {
@@ -723,7 +723,7 @@ Version:1.0
 }
 .header.shop .search-bar .btnn:hover{
 	color:#fff;
-	background:#F7941D;
+	background:#ffd332;
 }
 /* Search Form */
 .header.shop .search-top {
@@ -738,14 +738,14 @@ Version:1.0
 }
 .header.shop .middle-inner {
 	padding: 20px 0;
-	background: #fff;
+	background: #110066;
 	border-top: 1px solid #eee;
 }
 .header.shop.v3 .middle-inner {
 	border:none;
 }
 .header.shop .header-inner {
-	background: #333;
+	background: #110066;
 }
 .header.shop.v3 .header-inner {
 	background: transparent;
@@ -957,15 +957,15 @@ Version:1.0
 }
 .header.shop .nav li:hover a{
 	color:#fff;
-	background:#F7941D;
+	background:#4b35b6;
 }
 .header.shop.v2 .nav li:hover a{
-	color:#F7941D;
+	color:#4b35b6;
 	background:transparent;
 }
 .header.shop .nav li.active a{
-	color:#fff;
-	background:#F7941D;
+	color:#5f5f5f;
+	background:#ffd332;
 }
 .header.shop.v2 .nav li.active a{
 	color:#333 !important;
@@ -978,20 +978,20 @@ Version:1.0
 	margin:0;
 }
 .header.shop .nav li .dropdown li:hover a{
-	background:#F7941D;
+	background:#110066;
 }
 .header.shop.v2 .nav li.active .dropdown li a{
 	color:#333 !important;
 }
 .header.shop.v2 .nav li.active .dropdown li a:hover{
 	color:#fff !important;
-	background:#F7941D !important;
+	background:#110066 !important;
 }
 .header.shop.v2 .nav li.active .dropdown li a:hover{
 	color:#fff !important;
 }
 .header.shop.v2 .nav li .dropdown li:hover a{
-	color:#F7941D;
+	color:#110066;
 }
 .header.shop .nav li .dropdown li a {
 	color: #333;
@@ -1012,10 +1012,10 @@ Version:1.0
 }
 .header.shop.v2 .nav li .dropdown li a:hover{
 	color:#fff !important;
-	background:#F7941D;
+	background:#110066;
 }
 .header.shop .nav li .dropdown li .dropdown.sub-dropdown li a:hover{
-	background:#F7941D;
+	background:#110066;
 }
 .header.shop .right-bar {
 	display: inline-block;
@@ -1032,23 +1032,23 @@ Version:1.0
 	color:#F7941D;
 }
 .header.shop .right-bar .sinlge-bar .single-icon{
-	color:#333;
+	color:#866d00;
 	font-size:20px;
 	position:relative;
 }
 .header.shop .right-bar .sinlge-bar .single-icon:hover{
-	color:#F7941D;
+	color:#fbd42f;
 }
 .header.shop .right-bar .sinlge-bar .single-icon .total-count {
 	position: absolute;
 	top: -7px;
 	right: -8px;
-	background: #f6931d;
+	background: #fbd42f;
 	width: 18px;
 	height: 18px;
 	line-height: 18px;
 	text-align: center;
-	color: #fff;
+	color: #000;
 	border-radius: 100%;
 	font-size: 11px;
 }
@@ -2072,7 +2072,7 @@ Version:1.0
 	box-shadow: none;
 	border: none;
 	height: 4px;
-	background: #F7941D;
+	background: #4b35b6;
 	color: #F7941D;
 	border-radius: 0px;
 }
@@ -2158,7 +2158,7 @@ Version:1.0
 	text-transform: capitalize;
 }
 .shop-sidebar .categor-list li a:hover{
-	color:#F7941D;
+	color:#4b35b6;
 }
 /* Recent Post */
 .shop-sidebar .single-post {
@@ -2262,7 +2262,7 @@ Version:1.0
 	border-radius:0px;
 }
 .shop .nice-select .list li:hover{
-	background:#F7941D;
+	background:#110066;
 	color:#fff;
 }
 .shop .view-mode {
@@ -2288,7 +2288,7 @@ Version:1.0
 }
 .shop .view-mode li.active a,
 .shop .view-mode li:hover a {
-	background: #F7941D;
+	background: #110066;
 	color:#fff;
 	border-color:transparent;
 }
@@ -3838,6 +3838,7 @@ Version:1.0
 	position: relative;
 	margin-bottom: 15px;
 	padding-bottom: 15px;
+	color: #110066;
 }
 .about-us .about-content h3::before {
 	position: absolute;
@@ -3851,7 +3852,7 @@ Version:1.0
 .about-us .about-content h3 span{
 	display:inline-block;
 	font-weight:700;
-	color:#F7941D;
+	color:#4b35b6;
 }
 .about-us .about-content p {
 	line-height: 26px;
@@ -3864,21 +3865,21 @@ Version:1.0
 	margin-top:40px;
 }
 .about-us .about-content .button .btn{
-	background:#333;
+	background:#000000;
 	color:#fff;
 	margin-right:15px;
 }
 .about-us .about-content .button .btn:hover{
-	background:#F7941D;
-	color:#fff;
+	background:#ffd332;
+	color:#494949;
 }
 .about-us .about-content .button .btn.primary{
-	background:#F7941D;
-	color:#fff;
+	background:#ffd332;
+	color:#494949;
 }
 .about-us .about-content .button .btn.primary:hover{
-	background:#333;
-	color:#fff;
+	background:#ffd332;
+	color:#494949;
 }
 .about-us .about-content .button .btn:last-child{
 	margin:0;
@@ -4809,7 +4810,7 @@ Version:1.0
 	20. Start Footer CSS
 ===============================*/
 .footer{
-	background:#222;
+	background:#110066;
 }
 .footer .about {
 	padding-right: 50px;
@@ -4838,7 +4839,7 @@ Version:1.0
 	display: block;
 }
 .footer .about .call a {
-	color: #f7941d;
+	color: #7297ff;
 	font-size: 20px;
 	font-weight: 600;
 }
