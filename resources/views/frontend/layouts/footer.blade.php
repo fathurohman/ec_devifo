@@ -5,7 +5,7 @@
 		<div class="footer-top section">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-12">
+					<div class="col-lg-6 col-md-6 col-6">
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
@@ -14,7 +14,7 @@
 							@php
 								$settings=DB::table('settings')->get();
 							@endphp
-							<p class="text">@foreach($settings as $data) {{$data->short_des}} @endforeach</p>
+							<p style="text-align: justify" class="text">@foreach($settings as $data) {{$data->short_des}} @endforeach</p>
 							<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">@foreach($settings as $data) {{$data->phone}} @endforeach</a></span></p>
 						</div>
 						<!-- End Single Widget -->
@@ -47,7 +47,7 @@
 						</div>
 						<!-- End Single Widget -->
 					</div> --}}
-					<div class="col-lg-6 col-md-6 col-12">
+					<div class="col-lg-6 col-md-6 col-6">
 						<!-- Single Widget -->
 						<div class="single-footer social">
 							<h4>Get In Tuch</h4>
@@ -114,7 +114,7 @@
 	<!-- Flex Slider JS -->
 	<script src="{{asset('frontend/js/flex-slider.js')}}"></script>
 	<!-- ScrollUp JS -->
-	<script src="{{asset('frontend/js/scrollup.js')}}"></script>
+	{{-- <script src="{{asset('frontend/js/scrollup.js')}}"></script> --}}
 	<!-- Onepage Nav JS -->
 	<script src="{{asset('frontend/js/onepage-nav.min.js')}}"></script>
 	{{-- Isotope --}}

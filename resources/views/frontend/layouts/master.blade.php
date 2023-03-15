@@ -23,6 +23,8 @@
 	@yield('main-content')
 
 	@include('frontend.layouts.footer')
+	<!-- navbar Bottom -->
+	@include('frontend.layouts.navbar_bottom')
 
 </body>
 </html>

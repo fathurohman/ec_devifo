@@ -155,10 +155,10 @@
 	<!--/ End Shopping Cart -->
 
 	<!-- Start Shop Services Area  -->
-	<section class="shop-services section">
+	{{-- <section class="shop-services section">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-6 col-12">
+				<div class="col-lg-3 col-md-6 col-3">
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-rocket"></i>
@@ -167,7 +167,7 @@
 					</div>
 					<!-- End Single Service -->
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
+				<div class="col-lg-3 col-md-6 col-3">
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-reload"></i>
@@ -176,7 +176,7 @@
 					</div>
 					<!-- End Single Service -->
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
+				<div class="col-lg-3 col-md-6 col-3">
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-lock"></i>
@@ -185,7 +185,7 @@
 					</div>
 					<!-- End Single Service -->
 				</div>
-				<div class="col-lg-3 col-md-6 col-12">
+				<div class="col-lg-3 col-md-6 col-3">
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-tag"></i>
@@ -196,11 +196,11 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!-- End Shop Newsletter -->
 
 	<!-- Start Shop Newsletter  -->
-	@include('frontend.layouts.newsletter')
+	{{-- @include('frontend.layouts.newsletter') --}}
 	<!-- End Shop Newsletter -->
 
 @endsection

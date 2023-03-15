@@ -4839,8 +4839,8 @@ Version:1.0
 	display: block;
 }
 .footer .about .call a {
-	color: #7297ff;
-	font-size: 20px;
+	color: #fdd331;
+	font-size: 17px;
 	font-weight: 600;
 }
 .footer .links ul{}
@@ -4911,3 +4911,18 @@ Version:1.0
 /*=============================
 	End Footer CSS
 ===============================*/
+
+
+.navbar .navbar-nav .nav-link .total-count {
+	position: absolute;
+	/* top: -7px;
+	right: -8px; */
+	background: #fbd42f;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	color: #000;
+	border-radius: 100%;
+	font-size: 11px;
+}

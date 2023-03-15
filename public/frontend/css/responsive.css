@@ -1127,7 +1127,7 @@ Version:1.0
 	background:transparent;
 }
 .slicknav_nav li .dropdown li a{
-	color:#555;
+	color:#ffffff;
 	background:transparent;
 }
 .slicknav_nav li .dropdown li a:hover{
@@ -1620,6 +1620,7 @@ Version:1.0
 }
 .footer .single-footer {
 	padding:12px 0;
+	font-size: 10px;
 }
 .modal-dialog .quickview-slider-active {
 	display: none;

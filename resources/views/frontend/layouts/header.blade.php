@@ -21,7 +21,7 @@
                     <!-- Top Right -->
                     <div class="right-content">
                         <ul class="list-main">
-                        <li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Track Order</a></li>
+                        {{-- <li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Track Order</a></li> --}}
                             {{-- <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li> --}}
                             @auth 
                                 @if(Auth::user()->role=='admin')
@@ -55,7 +55,7 @@
                     </div>
                     <!--/ End Logo -->
                     <!-- Search Form -->
-                    <div class="search-top">
+                    {{-- <div class="search-top">
                         <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
                         <!-- Search Form -->
                         <div class="search-top">
@@ -65,7 +65,7 @@
                             </form>
                         </div>
                         <!--/ End Search Form -->
-                    </div>
+                    </div> --}}
                     <!--/ End Search Form -->
                     <div class="mobile-nav"></div>
                 </div>

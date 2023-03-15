@@ -4179,7 +4179,7 @@ tbody.collapse.show {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, .5)
+    color: rgb(255, 255, 255)
 }
 
 .navbar-dark .navbar-nav .nav-link:focus,
@@ -4195,7 +4195,9 @@ tbody.collapse.show {
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .show>.nav-link {
-    color: #fff
+    color: #f6ff00;
+    border-color: #f6ff00;
+    
 }
 
 .navbar-dark .navbar-toggler {
@@ -5970,6 +5972,10 @@ a.bg-light:hover {
 
 .bg-dark {
     background-color: #343a40!important
+}
+
+.bg-devifo {
+    background-color: #110066!important
 }
 
 a.bg-dark:focus,
