@@ -63,11 +63,14 @@ class LoginController extends Controller
             $user = User::create([
                 'name'          => $userSocial->getName(),
                 'email'         => $userSocial->getEmail(),
-                'image'         => $userSocial->getAvatar(),
+                'photo'         => $userSocial->getAvatar(),
                 'provider_id'   => $userSocial->getId(),
                 'provider'      => $provider,
             ]);
-         return redirect()->route('home');
+        //  return redirect()->route('home');
+        $users2 = User::where(['email' => $userSocial->getEmail()])->first();
+        Auth::login($users2);
+        return redirect('/')->with('success','You are login from '.$provider);
         }
     }
 }
