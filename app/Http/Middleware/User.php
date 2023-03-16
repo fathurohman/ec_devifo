@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Auth;
 use Closure;
 
 class User
@@ -15,7 +15,7 @@ class User
      */
     public function handle($request, Closure $next)
     {
-        if(empty(session('user'))){
+        if(empty(Auth::user())){
             return redirect()->route('login.form');
         }
         else{
