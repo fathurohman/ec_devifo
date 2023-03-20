@@ -1752,6 +1752,7 @@ Version:1.0
   position: relative;
   overflow: hidden;
   cursor:pointer;
+  border-radius: 25px;
 }
 .single-product .product-img a {
   display: block;

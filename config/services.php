@@ -40,9 +40,9 @@ return [
         'redirect'      => env('GOOGLE_REDIRECT'),
      ],
      'facebook' => [
-        'client_id' => '1494792524037846', //Facebook API
-        'client_secret' => '1bf13c2faf680f4ae2b97bdafa92c7d2', //Facebook Secret
-        'redirect' => 'http://localhost:8000/login/facebook/callback',
+        'client_id'     => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_APP_SECRET'),
+        'redirect'      => env('FACEBOOK_REDIRECT'),
      ],
 
 ];
@@ -52,4 +52,9 @@ return [
 GOOGLE_CLIENT_ID=405488045949-f23v9gdb3cdtqj9lq3nqeji128ck5hr9.apps.googleusercontent.com
 GOOGLE_APP_SECRET=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
 GOOGLE_REDIRECT=http://127.0.0.1:8000/login/google/callback
+
+
+FACEBOOK_CLIENT_ID=3569953279893327
+FACEBOOK_APP_SECRET=56025838504e59afa62aa0a68522d21a
+FACEBOOK_REDIRECT=http://127.0.0.1:8000/login/facebook/callback
 */

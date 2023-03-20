@@ -47,10 +47,10 @@
                     @else
 
                         <div class="login-form">
-                            <h2>Login</h2>
+                            <h2 style="margin-bottom: 50px">Login</h2>
                                     <div class="col-12 text-center">
                                         <div class="form-group login-btn">
-                                       
+                                        
                                         <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook">
                                             <i class="ti-facebook"></i> Login With Facebook
                                         </a>
@@ -66,6 +66,7 @@
                     </div>
                 </div>
             </section>
+            <br><br><br><br><br><br>
     <!--/ End Login -->
 @endsection
 @push('styles')

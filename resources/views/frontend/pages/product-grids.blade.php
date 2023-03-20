@@ -164,7 +164,7 @@
                             {{-- {{$products}} --}}
                             @if(count($products)>0)
                                 @foreach($products as $product)
-                                    <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="col-lg-4 col-md-6 col-6">
                                         <div class="single-product">
                                             <div class="product-img">
                                                 <a href="{{route('product-detail',$product->slug)}}">
