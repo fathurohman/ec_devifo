@@ -28,7 +28,7 @@
                     @csrf
                     <div class="row"> 
 
-                        <div class="col-lg-8 col-12">
+                        {{-- <div class="col-lg-8 col-12">
                             <div class="checkout-form">
                                 <h2>Make Your Checkout Here</h2>
                                 <p>Please register in order to checkout more quickly</p>
@@ -353,8 +353,8 @@
                                 </div>
                                 <!--/ End Form -->
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-12">
+                        </div> --}}
+                        <div class="col-lg-12 col-12">
                             <div class="order-details">
                                 <!-- Order Widget -->
                                 <div class="single-widget">
@@ -362,7 +362,7 @@
                                     <div class="content">
                                         <ul>
 										    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span>${{number_format(Helper::totalCartPrice(),2)}}</span></li>
-                                            <li class="shipping">
+                                            {{-- <li class="shipping">
                                                 Shipping Cost
                                                 @if(count(Helper::shipping())>0 && Helper::cartCount()>0)
                                                     <select name="shipping" class="nice-select">
@@ -374,7 +374,7 @@
                                                 @else 
                                                     <span>Free</span>
                                                 @endif
-                                            </li>
+                                            </li> --}}
                                             
                                             @if(session('coupon'))
                                             <li class="coupon_price" data-price="{{session('coupon')['value']}}">You Save<span>${{number_format(session('coupon')['value'],2)}}</span></li>
@@ -400,10 +400,10 @@
                                     <div class="content">
                                         <div class="checkbox">
                                             {{-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> Check Payments</label> --}}
-                                            <form-group>
-                                                <input name="payment_method"  type="radio" value="cod"> <label> Cash On Delivery</label><br>
-                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label> 
-                                            </form-group>
+                                                {{-- <form-group>
+                                                    <input name="payment_method"  type="radio" value="cod"> <label> Cash On Delivery</label><br>
+                                                    <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label> 
+                                                </form-group> --}}
                                             
                                         </div>
                                     </div>
@@ -479,7 +479,7 @@
     <!-- End Shop Services -->
     
     <!-- Start Shop Newsletter  -->
-    <section class="shop-newsletter section">
+    {{-- <section class="shop-newsletter section">
         <div class="container">
             <div class="inner-top">
                 <div class="row">
@@ -498,7 +498,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End Shop Newsletter -->
 @endsection
 @push('styles')

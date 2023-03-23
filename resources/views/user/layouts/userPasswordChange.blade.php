@@ -5,7 +5,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Change Password</div>
-   
+                
+                @if (Auth::user()->provider == 'google')
+                    <div class="card-body">
+                        <p>Can't change password</p>
+                    </div>
+                @else
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('change.password') }}">
                         @csrf 
@@ -47,6 +53,9 @@
                         </div>
                     </form>
                 </div>
+                @endif
+               
+
             </div>
         </div>
     </div>
