@@ -3,7 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin')}}">
       <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
+        {{-- <i class="fas fa-laugh-wink"></i> --}}
       </div>
       <div class="sidebar-brand-text mx-3">Admin</div>
     </a>
@@ -22,13 +22,13 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    {{-- <div class="sidebar-heading">
         Banner
-    </div>
+    </div> --}}
 
     <!-- Nav Item - Pages Collapse Menu -->
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{route('file-manager')}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Media Manager</span></a>
@@ -46,9 +46,9 @@
           <a class="collapse-item" href="{{route('banner.create')}}">Add Banners</a>
         </div>
       </div>
-    </li>
+    </li> --}}
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    {{-- <hr class="sidebar-divider"> --}}
         <!-- Heading -->
         <div class="sidebar-heading">
             Shop
@@ -84,7 +84,7 @@
     </li>
 
     {{-- Brands --}}
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#brandCollapse" aria-expanded="true" aria-controls="brandCollapse">
           <i class="fas fa-table"></i>
           <span>Brands</span>
@@ -96,10 +96,10 @@
             <a class="collapse-item" href="{{route('brand.create')}}">Add Brand</a>
           </div>
         </div>
-    </li>
+    </li> --}}
 
     {{-- Shipping --}}
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#shippingCollapse" aria-expanded="true" aria-controls="shippingCollapse">
           <i class="fas fa-truck"></i>
           <span>Shipping</span>
@@ -111,7 +111,7 @@
             <a class="collapse-item" href="{{route('shipping.create')}}">Add Shipping</a>
           </div>
         </div>
-    </li>
+    </li> --}}
 
     <!--Orders -->
     <li class="nav-item">
@@ -127,7 +127,7 @@
             <i class="fas fa-comments"></i>
             <span>Reviews</span></a>
     </li>
-    
+
 
     <!-- Divider -->
     <hr class="sidebar-divider">
