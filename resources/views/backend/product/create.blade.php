@@ -34,7 +34,7 @@
 
         <div class="form-group">
           <label for="is_featured">Is Featured</label><br>
-          <input type="checkbox" name='is_featured' id='is_featured' value='1' checked> Yes                        
+          <input type="checkbox" name='is_featured' id='is_featured' value='1' checked> Yes
         </div>
               {{-- {{$categories}} --}}
 
@@ -84,9 +84,9 @@
           </select>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
           <label for="brand_id">Brand</label>
-          {{-- {{$brands}} --}}
+
 
           <select name="brand_id" class="form-control">
               <option value="">--Select Brand--</option>
@@ -104,7 +104,7 @@
               <option value="new">New</option>
               <option value="hot">Hot</option>
           </select>
-        </div>
+        </div> --}}
 
         <div class="form-group">
           <label for="stock">Quantity <span class="text-danger">*</span></label>
@@ -117,9 +117,8 @@
           <label for="inputPhoto" class="col-form-label">Photo <span class="text-danger">*</span></label>
           <div class="input-group">
               <span class="input-group-btn">
-                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i> Choose
-                  </a>
+
+                  <input type="file" />
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
         </div>
@@ -128,7 +127,7 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-        
+
         <div class="form-group">
           <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
           <select name="status" class="form-control">

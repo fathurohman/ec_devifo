@@ -87,7 +87,7 @@
                                 <!-- Single Widget -->
                                 {{-- <div class="single-widget recent-post">
                                     <h3 class="title">Recent post</h3>
-                                   
+
                                     @foreach($recent_products as $product)
                                         <!-- Single Post -->
                                         @php
@@ -192,8 +192,8 @@
                                                 @php
                                                     $after_discount=($product->price-($product->price*$product->discount)/100);
                                                 @endphp
-                                                <span>${{number_format($after_discount,2)}}</span>
-                                                <del style="padding-left:4%;">${{number_format($product->price,2)}}</del>
+                                                <span>Rp. {{number_format($after_discount)}}</span>
+                                                <del style="padding-left:4%;">Rp. {{number_format($product->price)}}</del>
                                             </div>
                                         </div>
                                     </div>
@@ -285,7 +285,7 @@
                                             @php
                                                 $after_discount=($product->price-($product->price*$product->discount)/100);
                                             @endphp
-                                            <h3><small><del class="text-muted">${{number_format($product->price,2)}}</del></small>    ${{number_format($after_discount,2)}}  </h3>
+                                            <h3><small><del class="text-muted">Rp. {{number_format($product->price,2)}}</del></small>    Rp. {{number_format($after_discount,2)}}  </h3>
                                             <div class="quickview-peragraph">
                                                 <p>{!! html_entity_decode($product->summary) !!}</p>
                                             </div>

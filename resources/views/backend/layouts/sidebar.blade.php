@@ -5,7 +5,7 @@
       <div class="sidebar-brand-icon rotate-n-15">
         {{-- <i class="fas fa-laugh-wink"></i> --}}
       </div>
-      <div class="sidebar-brand-text mx-3">Admin</div>
+      <div class="sidebar-brand-text mx-3">Administrator</div>
     </a>
 
     <!-- Divider -->
@@ -133,7 +133,7 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    {{-- <div class="sidebar-heading">
       Posts
     </div>
 
@@ -188,7 +188,7 @@
             <i class="fas fa-comments fa-chart-area"></i>
             <span>Comments</span>
         </a>
-      </li>
+      </li> --}}
 
 
     <!-- Divider -->
