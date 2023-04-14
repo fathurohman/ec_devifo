@@ -37,7 +37,7 @@
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
                                             <label>First Name</label>
-                                            <input type="text" name="first_name" placeholder="" value="{{Auth::user()->name}} " readonly>
+                                            <input type="text" name="first_name" placeholder="" value="{{Auth::user()->name}}" readonly>
 
                                             @error('first_name')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -111,7 +111,7 @@
                                     <h2>CART  TOTALS</h2>
                                     <div class="content">
                                         <ul>
-										    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span>Rp. {{number_format(Helper::totalCartPrice(),2)}}</span></li>
+										    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span>Rp. {{number_format(Helper::totalCartPrice())}}</span></li>
                                             {{-- <li class="shipping">
                                                 Shipping Cost
                                                 @if(count(Helper::shipping())>0 && Helper::cartCount()>0)
@@ -127,7 +127,7 @@
                                             </li> --}}
 
                                             @if(session('coupon'))
-                                            <li class="coupon_price" data-price="{{session('coupon')['value']}}">You Save<span>Rp. {{number_format(session('coupon')['value'],2)}}</span></li>
+                                            <li class="coupon_price" data-price="{{session('coupon')['value']}}">You Save<span>Rp. {{number_format(session('coupon')['value'])}}</span></li>
                                             @endif
                                             @php
                                                 $total_amount=Helper::totalCartPrice();
@@ -136,9 +136,9 @@
                                                 }
                                             @endphp
                                             @if(session('coupon'))
-                                                <li class="last"  id="order_total_price">Total<span>Rp. {{number_format($total_amount,2)}}</span></li>
+                                                <li class="last"  id="order_total_price">Total<span>Rp. {{number_format($total_amount)}}</span></li>
                                             @else
-                                                <li class="last"  id="order_total_price">Total<span>Rp. {{number_format($total_amount,2)}}</span></li>
+                                                <li class="last"  id="order_total_price">Total<span>Rp. {{number_format($total_amount)}}</span></li>
                                             @endif
                                         </ul>
                                     </div>
@@ -171,6 +171,7 @@
                                     <div class="content">
                                         <div class="button">
                                             <button type="submit" class="btn">proceed to checkout</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -179,6 +180,7 @@
                         </div>
                     </div>
                 </form>
+                <button id="pay-button" class="btn">pay button</button>
         </div>
     </section>
     <!--/ End Checkout -->
@@ -295,6 +297,17 @@
 	</style>
 @endpush
 @push('scripts')
+<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-X2b9SiQKvQbUJ5j7"></script>
+<script type="text/javascript">
+    // For example trigger on button clicked, or any time you need
+    var payButton = document.getElementById('pay-button');
+    payButton.addEventListener('click', function () {
+      // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+      window.snap.pay('{{$snaptoken}}');
+      // customer will be redirected after completing payment pop-up
+    });
+  </script>
+
 	<script src="{{asset('frontend/js/nice-select/js/jquery.nice-select.min.js')}}"></script>
 	<script src="{{ asset('frontend/js/select2/js/select2.min.js') }}"></script>
 	<script>
