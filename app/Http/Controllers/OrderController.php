@@ -44,16 +44,16 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'first_name'=>'string|required',
-            'last_name'=>'string|required',
-            'address1'=>'string|required',
-            'address2'=>'string|nullable',
-            'coupon'=>'nullable|numeric',
-            'phone'=>'numeric|required',
-            'post_code'=>'string|nullable',
-            'email'=>'string|required'
-        ]);
+        // $this->validate($request,[
+        //     'first_name'=>'string|required',
+        //     'last_name'=>'string|required',
+        //     'address1'=>'string|required',
+        //     'address2'=>'string|nullable',
+        //     'coupon'=>'nullable|numeric',
+        //     'phone'=>'numeric|required',
+        //     'post_code'=>'string|nullable',
+        //     'email'=>'string|required'
+        // ]);
         // return $request->all();
 
         if(empty(Cart::where('user_id',auth()->user()->id)->where('order_id',null)->first())){
@@ -90,10 +90,11 @@ class OrderController extends Controller
 
         $order=new Order();
         $order_data=$request->all();
-        $order_data['order_number']='ORD-'.strtoupper(Str::random(10));
+        $order_data['order_number']='DVF-'.strtoupper(Str::random(10));
         $order_data['user_id']=$request->user()->id;
-        $order_data['shipping_id']=$request->shipping;
-        $shipping=Shipping::where('id',$order_data['shipping_id'])->pluck('price');
+        $order_data['address1']=$request->address;
+        // $order_data['shipping_id']=$request->shipping;
+        // $shipping=Shipping::where('id',$order_data['shipping_id'])->pluck('price');
         // return session('coupon')['value'];
         $order_data['sub_total']=Helper::totalCartPrice();
         $order_data['quantity']=Helper::cartCount();
@@ -146,7 +147,7 @@ class OrderController extends Controller
         }
         Cart::where('user_id', auth()->user()->id)->where('order_id', null)->update(['order_id' => $order->id]);
 
-        // dd($users);        
+        // dd($users);
         request()->session()->flash('success','Your product successfully placed in order');
         return redirect()->route('home');
     }
@@ -250,17 +251,17 @@ class OrderController extends Controller
             elseif($order->status=="process"){
                 request()->session()->flash('success','Your order is under processing please wait.');
                 return redirect()->route('home');
-    
+
             }
             elseif($order->status=="delivered"){
                 request()->session()->flash('success','Your order is successfully delivered.');
                 return redirect()->route('home');
-    
+
             }
             else{
                 request()->session()->flash('error','Your order canceled. please try again');
                 return redirect()->route('home');
-    
+
             }
         }
         else{

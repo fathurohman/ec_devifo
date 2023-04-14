@@ -38,6 +38,7 @@
                                         <div class="form-group">
                                             <label>First Name</label>
                                             <input type="text" name="first_name" placeholder="" value="{{Auth::user()->name}} " readonly>
+
                                             @error('first_name')
                                                 <span class='text-danger'>{{$message}}</span>
                                             @enderror
@@ -46,7 +47,7 @@
                                     {{-- <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
                                             <label>Last Name<span>*</span></label>
-                                            <input type="text" name="last_name" placeholder="" value="{{old('lat_name')}}">
+
                                             @error('last_name')
                                                 <span class='text-danger'>{{$message}}</span>
                                             @enderror

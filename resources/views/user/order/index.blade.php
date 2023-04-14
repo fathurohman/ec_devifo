@@ -22,13 +22,13 @@
               <th>Name</th>
               <th>Email</th>
               <th>Quantity</th>
-              <th>Charge</th>
+              {{-- <th>Charge</th> --}}
               <th>Total Amount</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tfoot>
+          {{-- <tfoot>
             <tr>
               <th>S.N.</th>
               <th>Order No.</th>
@@ -40,7 +40,7 @@
               <th>Status</th>
               <th>Action</th>
               </tr>
-          </tfoot>
+          </tfoot> --}}
           <tbody>
             @foreach($orders as $order)
                 <tr>
@@ -49,8 +49,8 @@
                     <td>{{$order->first_name}} {{$order->last_name}}</td>
                     <td>{{$order->email}}</td>
                     <td>{{$order->quantity}}</td>
-                    <td>${{$order->shipping->price}}</td>
-                    <td>${{number_format($order->total_amount,2)}}</td>
+                    {{-- <td>${{$order->shipping->price}}</td> --}}
+                    <td>Rp. {{number_format($order->total_amount)}}</td>
                     <td>
                         @if($order->status=='new')
                           <span class="badge badge-primary">{{$order->status}}</span>
@@ -64,11 +64,11 @@
                     </td>
                     <td>
                         <a href="{{route('user.order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a>
-                        <form method="POST" action="{{route('user.order.delete',[$order->id])}}">
+                        {{-- <form method="POST" action="{{route('user.order.delete',[$order->id])}}">
                           @csrf
                           @method('delete')
                               <button class="btn btn-danger btn-sm dltBtn" data-id={{$order->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
             @endforeach

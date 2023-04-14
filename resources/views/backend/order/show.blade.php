@@ -122,14 +122,14 @@
                         <td>Address</td>
                         <td> : {{$order->address1}}, {{$order->address2}}</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td>Country</td>
                         <td> : {{$order->country}}</td>
                     </tr>
                     <tr>
                         <td>Post Code</td>
                         <td> : {{$order->post_code}}</td>
-                    </tr>
+                    </tr> --}}
               </table>
             </div>
           </div>
