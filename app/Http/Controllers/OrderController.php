@@ -10,6 +10,7 @@ use App\User;
 use PDF;
 use Notification;
 use Helper;
+use Auth;
 use Illuminate\Support\Str;
 use App\Notifications\StatusNotification;
 
@@ -44,50 +45,11 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request,[
-        //     'first_name'=>'string|required',
-        //     'last_name'=>'string|required',
-        //     'address1'=>'string|required',
-        //     'address2'=>'string|nullable',
-        //     'coupon'=>'nullable|numeric',
-        //     'phone'=>'numeric|required',
-        //     'post_code'=>'string|nullable',
-        //     'email'=>'string|required'
-        // ]);
-        // return $request->all();
 
         if(empty(Cart::where('user_id',auth()->user()->id)->where('order_id',null)->first())){
             request()->session()->flash('error','Cart is Empty !');
             return back();
         }
-        // $cart=Cart::get();
-        // // return $cart;
-        // $cart_index='ORD-'.strtoupper(uniqid());
-        // $sub_total=0;
-        // foreach($cart as $cart_item){
-        //     $sub_total+=$cart_item['amount'];
-        //     $data=array(
-        //         'cart_id'=>$cart_index,
-        //         'user_id'=>$request->user()->id,
-        //         'product_id'=>$cart_item['id'],
-        //         'quantity'=>$cart_item['quantity'],
-        //         'amount'=>$cart_item['amount'],
-        //         'status'=>'new',
-        //         'price'=>$cart_item['price'],
-        //     );
-
-        //     $cart=new Cart();
-        //     $cart->fill($data);
-        //     $cart->save();
-        // }
-
-        // $total_prod=0;
-        // if(session('cart')){
-        //         foreach(session('cart') as $cart_items){
-        //             $total_prod+=$cart_items['quantity'];
-        //         }
-        // }
-
         $order=new Order();
         $order_data=$request->all();
         $order_data['order_number']='DVF-'.strtoupper(Str::random(10));
@@ -119,14 +81,15 @@ class OrderController extends Controller
         }
         // return $order_data['total_amount'];
         $order_data['status']="new";
-        if(request('payment_method')=='paypal'){
-            $order_data['payment_method']='paypal';
-            $order_data['payment_status']='paid';
-        }
-        else{
-            $order_data['payment_method']='cod';
-            $order_data['payment_status']='Unpaid';
-        }
+        $order_data['payment_status']='Unpaid';
+        // if(request('payment_method')=='paypal'){
+        //     $order_data['payment_method']='paypal';
+        //     $order_data['payment_status']='paid';
+        // }
+        // else{
+        //     $order_data['payment_method']='cod';
+        //     $order_data['payment_status']='Unpaid';
+        // }
         $order->fill($order_data);
         $status=$order->save();
         if($order)
@@ -149,7 +112,9 @@ class OrderController extends Controller
 
         // dd($users);
         request()->session()->flash('success','Your product successfully placed in order');
-        return redirect()->route('home');
+        return redirect()->route('list.order');
+
+
     }
 
     /**
@@ -216,6 +181,20 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function delete_order($id)
+     {
+         $order=Order::find($id);
+         if($order){
+             $order->delete();
+             request()->session()->flash('success','Order Successfully deleted');
+             return redirect()->back();
+         }else{
+             request()->session()->flash('error','Order can not found');
+             return redirect()->back();
+         }
+     }
+
     public function destroy($id)
     {
         $order=Order::find($id);
@@ -304,5 +283,70 @@ class OrderController extends Controller
             $data[$monthName] = (!empty($result[$i]))? number_format((float)($result[$i]), 2, '.', '') : 0.0;
         }
         return $data;
+    }
+
+
+
+    public function listorder()
+    {
+        if(Auth::user()->id){
+            $user_id = Auth::user()->id;
+        }
+
+        $order = Order::where('user_id', $user_id)->get();
+        $cekorder = Order::where('user_id', $user_id)->count();
+
+
+
+
+        return view('frontend.pages.list-order', compact('order', 'cekorder'));
+    }
+
+
+    public function payment_pay(Request $request, $id)
+    {
+        $order = Order::find($id);
+
+        // Set your Merchant Server Key
+        \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
+        //   dd($request->total_amount);
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => $order->order_number,
+                'gross_amount' => $order->total_amount,
+            ),
+            'customer_details' => array(
+                'first_name' => $order->first_name,
+                'last_name' => '',
+                'email' => $order->email,
+                'phone' => $order->phone,
+            ),
+        );
+
+        $snaptoken = \Midtrans\Snap::getSnapToken($params);
+
+
+
+        return view('frontend.pages.payment', compact('order','snaptoken'));
+    }
+
+    public function orderpayment_update(Request $request)
+    {
+        $json = json_decode($request->json);
+        $order = Order::find($request->id);
+        $order->payment_id = $json->transaction_id;
+        $order->payment_status = 'paid';
+        $order->payment_method = $json->card_type;
+        $order->fr_url = $json->finish_redirect_url;
+        $order->save();
+
+        request()->session()->flash('success','Payment Successfully');
+        return redirect()->route('list.order');
     }
 }

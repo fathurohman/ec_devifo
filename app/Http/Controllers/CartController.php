@@ -230,6 +230,8 @@ class CartController extends Controller
     //     return redirect()->back()->with('success','Successfully remove item');
     // }
 
+
+
     public function checkout(Request $request){
         // $cart=session('cart');
         // $cart_index=\Str::random(10);
@@ -252,18 +254,18 @@ class CartController extends Controller
         // }
 
         // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = 'SB-Mid-server-kwEUD7BLB1gbOjl_RU4FcGBc';
+        \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
         \Midtrans\Config::$isProduction = false;
         // Set sanitization on (default)
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
-
+        //   dd($request->total_amount);
         $params = array(
             'transaction_details' => array(
                 'order_id' => rand(),
-                'gross_amount' => 12000,
+                'gross_amount' => 10000,
             ),
             'customer_details' => array(
                 'first_name' => 'budi',

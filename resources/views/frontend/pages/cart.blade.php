@@ -140,7 +140,12 @@
 										@endif
 									</ul>
 									<div class="button5">
-										<a href="{{route('checkout')}}" class="btn">Checkout</a>
+                                        <form action="{{route('checkout')}}" method="GET">
+                                            @csrf
+                                            <input type="hidden" name="total_amount" value="{{$total_amount}}">
+                                            <button type="submit" class="btn">Checkout</a>
+                                        </form>
+										{{-- <a href="{{route('checkout')}}" class="btn">Checkout</a> --}}
 										<a href="{{route('product-grids')}}" class="btn">Continue shopping</a>
 									</div>
 								</div>

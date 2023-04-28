@@ -15,7 +15,7 @@
 								$settings=DB::table('settings')->get();
 							@endphp
 							<p style="text-align: justify" class="text">@foreach($settings as $data) {{$data->short_des}} @endforeach</p>
-							<p class="call">Got Question? Call us 24/7<span>@foreach($settings as $data)<a target="_blank" href="https://wa.me/{{$data->phone}}"> {{$data->phone}} </a>@endforeach</span></p>
+							<p class="call">Got Question?<span>@foreach($settings as $data)<a target="_blank" href="https://wa.me/{{$data->phone}}"> {{$data->phone}} </a>@endforeach</span></p>
 						</div>
 						<!-- End Single Widget -->
 					</div>

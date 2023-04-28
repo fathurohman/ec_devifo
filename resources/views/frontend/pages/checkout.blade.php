@@ -24,7 +24,7 @@
     <!-- Start Checkout -->
     <section class="shop checkout section">
         <div class="container">
-                <form class="form" method="POST" action="{{route('cart.order')}}">
+                <form class="form" method="POST" action="{{route('cart.order')}}" class="form-pay">
                     @csrf
                     <div class="row">
 
@@ -184,74 +184,12 @@
         </div>
     </section>
     <!--/ End Checkout -->
+    <form action="{{route('cart.order')}}" method="POST" id="submit_form">
+        @csrf
+        <input type="hidden" name="json" id="json_callback">
+        <input type="hidden" value="{{$total_amount}}" name="total_amount">
 
-    <!-- Start Shop Services Area  -->
-    {{-- <section class="shop-services section home">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-rocket"></i>
-                        <h4>Free shiping</h4>
-                        <p>Orders over $100</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-reload"></i>
-                        <h4>Free Return</h4>
-                        <p>Within 30 days returns</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-lock"></i>
-                        <h4>Sucure Payment</h4>
-                        <p>100% secure payment</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Service -->
-                    <div class="single-service">
-                        <i class="ti-tag"></i>
-                        <h4>Best Peice</h4>
-                        <p>Guaranteed price</p>
-                    </div>
-                    <!-- End Single Service -->
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- End Shop Services -->
-
-    <!-- Start Shop Newsletter  -->
-    {{-- <section class="shop-newsletter section">
-        <div class="container">
-            <div class="inner-top">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 col-12">
-                        <!-- Start Newsletter Inner -->
-                        <div class="inner">
-                            <h4>Newsletter</h4>
-                            <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
-                            <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-                                <input name="EMAIL" placeholder="Your email address" required="" type="email">
-                                <button class="btn">Subscribe</button>
-                            </form>
-                        </div>
-                        <!-- End Newsletter Inner -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- End Shop Newsletter -->
+    </form>
 @endsection
 @push('styles')
 	<style>
@@ -297,15 +235,43 @@
 	</style>
 @endpush
 @push('scripts')
-<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-X2b9SiQKvQbUJ5j7"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{env('MIDTRANS_CLIENT_KEY')}}"></script>
+   <script type="text/javascript">
     // For example trigger on button clicked, or any time you need
     var payButton = document.getElementById('pay-button');
-    payButton.addEventListener('click', function () {
+    payButton.addEventListener('click', function (e) {
+        e.preventDefault();
       // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-      window.snap.pay('{{$snaptoken}}');
-      // customer will be redirected after completing payment pop-up
+      snap.pay('{{$snaptoken}}', {
+        onSuccess: function(result){
+          /* You may add your own implementation here */
+          alert("payment success!"); console.log(result);
+          send_response_to(result);
+
+        },
+        onPending: function(result){
+          /* You may add your own implementation here */
+          alert("wating your payment!"); console.log(result);
+          send_response_to(result);
+        },
+        onError: function(result){
+          /* You may add your own implementation here */
+          alert("payment failed!"); console.log(result);
+          send_response_to(result);
+        },
+        onClose: function(){
+          /* You may add your own implementation here */
+          alert('you closed the popup without finishing the payment');
+        }
+      })
     });
+
+    function send_response_to(result) {
+        document.getElementById('json_callback').value = JSON.stringify(result);
+        alert(document.getElementById('json_callback').value);
+        $('submit-form').submit();
+    }
+
   </script>
 
 	<script src="{{asset('frontend/js/nice-select/js/jquery.nice-select.min.js')}}"></script>

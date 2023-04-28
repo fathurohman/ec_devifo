@@ -58,6 +58,12 @@ Route::get('wishlist-delete/{id}','WishlistController@wishlistDelete')->name('wi
 Route::post('cart/order','OrderController@store')->name('cart.order');
 Route::get('order/pdf/{id}','OrderController@pdf')->name('order.pdf');
 Route::get('/income','OrderController@incomeChart')->name('product.order.income');
+//
+Route::get('/list/order','OrderController@listorder')->name('list.order');
+Route::get('/delete_order/{id}','OrderController@delete_order')->name('delete.order');
+Route::get('/order_payment/{id}','OrderController@payment_pay')->name('order.pay');
+Route::post('cart/order_update','OrderController@orderpayment_update')->name('cart.order_update');
+
 // Route::get('/user/chart','AdminController@userPieChart')->name('user.piechart');
 Route::get('/product-grids','FrontendController@productGrids')->name('product-grids');
 Route::get('/product-lists','FrontendController@productLists')->name('product-lists');
