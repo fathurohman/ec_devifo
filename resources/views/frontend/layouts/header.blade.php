@@ -92,7 +92,7 @@
                 <div class="col-lg-2 col-md-3 col-12">
                     <div class="right-bar">
                         <!-- Search Form -->
-                        <div class="sinlge-bar shopping">
+                        {{-- <div class="sinlge-bar shopping">
                             @php
                                 $total_prod=0;
                                 $total_amount=0;
@@ -114,7 +114,7 @@
                                         <a href="{{route('wishlist')}}">View Wishlist</a>
                                     </div>
                                     <ul class="shopping-list">
-                                        {{-- {{Helper::getAllProductFromCart()}} --}}
+                                         {{Helper::getAllProductFromCart()}}
                                             @foreach(Helper::getAllProductFromWishlist() as $data)
                                                     @php
                                                         $photo=explode(',',$data->product['photo']);
@@ -137,6 +137,10 @@
                                 </div>
                             @endauth
                             <!--/ End Shopping Item -->
+                        </div> --}}
+                        <div class="sinlge-bar shopping">
+                            <a href="{{route('list.order')}}" class="single-icon"><i class="ti-wallet"></i> <span class="total-count">{{Helper::orderCount()}}</span></a>
+
                         </div>
                         {{-- <div class="sinlge-bar">
                             <a href="{{route('wishlist')}}" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>

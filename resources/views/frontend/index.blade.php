@@ -144,8 +144,8 @@
                                                 @php
                                                     $after_discount=($product->price-($product->price*$product->discount)/100);
                                                 @endphp
-                                                <span>${{number_format($after_discount,2)}}</span>
-                                                <del style="padding-left:4%;">${{number_format($product->price,2)}}</del>
+                                                <span>Rp. {{number_format($after_discount)}}</span>
+                                                <del style="padding-left:4%;">Rp. {{number_format($product->price)}}</del>
                                             </div>
                                         </div>
                                     </div>
@@ -337,7 +337,7 @@
 <!-- End Shop Blog  -->
 
 <!-- Start Shop Services Area -->
-<section class="shop-services section home">
+{{-- <section class="shop-services section home">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-3">
@@ -378,9 +378,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Shop Services Area -->
-{{-- 
+{{--
 @include('frontend.layouts.newsletter') --}}
 
 <!-- Modal -->
@@ -447,7 +447,7 @@
                                         @php
                                             $after_discount=($product->price-($product->price*$product->discount)/100);
                                         @endphp
-                                        <h3><small><del class="text-muted">${{number_format($product->price,2)}}</del></small>    ${{number_format($after_discount,2)}}  </h3>
+                                        <h3><small><del class="text-muted">Rp. {{number_format($product->price)}}</del></small>  Rp. {{number_format($after_discount)}}  </h3>
                                         <div class="quickview-peragraph">
                                             <p>{!! html_entity_decode($product->summary) !!}</p>
                                         </div>

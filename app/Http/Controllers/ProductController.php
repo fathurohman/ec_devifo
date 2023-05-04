@@ -45,22 +45,22 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // return $request->all();
-        $this->validate($request,[
-            'title'=>'string|required',
-            'summary'=>'string|required',
-            'description'=>'string|nullable',
-            'photo'=>'string|required',
-            'size'=>'nullable',
-            'stock'=>"required|numeric",
-            'cat_id'=>'required|exists:categories,id',
-            'brand_id'=>'nullable|exists:brands,id',
-            'child_cat_id'=>'nullable|exists:categories,id',
-            'is_featured'=>'sometimes|in:1',
-            'status'=>'required|in:active,inactive',
-            'condition'=>'required|in:default,new,hot',
-            'price'=>'required|numeric',
-            'discount'=>'nullable|numeric'
-        ]);
+        // $this->validate($request,[
+        //     'title'=>'string|required',
+        //     'summary'=>'string|required',
+        //     'description'=>'string|nullable',
+        //     'photo'=>'string|required',
+        //     'size'=>'nullable',
+        //     'stock'=>"required|numeric",
+        //     'cat_id'=>'required|exists:categories,id',
+        //     'brand_id'=>'nullable|exists:brands,id',
+        //     'child_cat_id'=>'nullable|exists:categories,id',
+        //     'is_featured'=>'sometimes|in:1',
+        //     'status'=>'required|in:active,inactive',
+        //     'condition'=>'required|in:default,new,hot',
+        //     'price'=>'required|numeric',
+        //     'discount'=>'nullable|numeric'
+        // ]);
 
         $data=$request->all();
         $slug=Str::slug($request->title);
@@ -129,22 +129,22 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $product=Product::findOrFail($id);
-        $this->validate($request,[
-            'title'=>'string|required',
-            'summary'=>'string|required',
-            'description'=>'string|nullable',
-            'photo'=>'string|required',
-            'size'=>'nullable',
-            'stock'=>"required|numeric",
-            'cat_id'=>'required|exists:categories,id',
-            'child_cat_id'=>'nullable|exists:categories,id',
-            'is_featured'=>'sometimes|in:1',
-            'brand_id'=>'nullable|exists:brands,id',
-            'status'=>'required|in:active,inactive',
-            'condition'=>'required|in:default,new,hot',
-            'price'=>'required|numeric',
-            'discount'=>'nullable|numeric'
-        ]);
+        // $this->validate($request,[
+        //     'title'=>'string|required',
+        //     'summary'=>'string|required',
+        //     'description'=>'string|nullable',
+        //     'photo'=>'string|required',
+        //     'size'=>'nullable',
+        //     'stock'=>"required|numeric",
+        //     'cat_id'=>'required|exists:categories,id',
+        //     'child_cat_id'=>'nullable|exists:categories,id',
+        //     'is_featured'=>'sometimes|in:1',
+        //     'brand_id'=>'nullable|exists:brands,id',
+        //     'status'=>'required|in:active,inactive',
+        //     'condition'=>'required|in:default,new,hot',
+        //     'price'=>'required|numeric',
+        //     'discount'=>'nullable|numeric'
+        // ]);
 
         $data=$request->all();
         $data['is_featured']=$request->input('is_featured',0);
@@ -176,7 +176,7 @@ class ProductController extends Controller
     {
         $product=Product::findOrFail($id);
         $status=$product->delete();
-        
+
         if($status){
             request()->session()->flash('success','Product successfully deleted');
         }

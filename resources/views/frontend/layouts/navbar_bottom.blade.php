@@ -23,7 +23,16 @@
                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
               </svg>
               @if (Helper::cartCount() > 0 ) <span class="total-count">{{Helper::cartCount()}}</span>@endif
-              
+
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{route('list.order')}}" class="nav-link {{Request::path()=='list/order' ? 'active' : ''}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-wallet" viewBox="0 0 16 16">
+                <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/>
+              </svg>
+              @if (Helper::orderCount() > 0 ) <span class="total-count">{{Helper::orderCount()}}</span>@endif
+
         </a>
       </li>
       <li class="nav-item">

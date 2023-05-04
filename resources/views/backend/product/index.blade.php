@@ -26,30 +26,13 @@
               <th>Discount</th>
               <th>Size</th>
               <th>Condition</th>
-              <th>Brand</th>
+              {{-- <th>Brand</th> --}}
               <th>Stock</th>
               <th>Photo</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Is Featured</th>
-              <th>Price</th>
-              <th>Discount</th>
-              <th>Size</th>
-              <th>Condition</th>
-              <th>Brand</th>
-              <th>Stock</th>
-              <th>Photo</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </tfoot>
           <tbody>
 
             @foreach($products as $product)
@@ -71,7 +54,7 @@
                     <td>  {{$product->discount}}% OFF</td>
                     <td>{{$product->size}}</td>
                     <td>{{$product->condition}}</td>
-                    <td> {{ucfirst($product->brand->title)}}</td>
+                    {{-- <td> {{ucfirst($product->brand->title)}}</td> --}}
                     <td>
                       @if($product->stock>0)
                       <span class="badge badge-primary">{{$product->stock}}</span>

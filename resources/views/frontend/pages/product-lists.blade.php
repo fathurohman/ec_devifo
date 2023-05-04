@@ -212,14 +212,14 @@
 																@php
 																	$after_discount=($product->price-($product->price*$product->discount)/100);
 																@endphp
-																<span>Rp. {{number_format($after_discount,2)}}</span>
-																<del>Rp. {{number_format($product->price,2)}}</del>
+																<span>Rp. {{number_format($after_discount)}}</span>
+																<del>Rp. {{number_format($product->price)}}</del>
 															</div>
 															<h3 class="title"><a href="{{route('product-detail',$product->slug)}}">{{$product->title}}</a></h3>
 														{{-- <p>{!! html_entity_decode($product->summary) !!}</p> --}}
 														</div>
 														<p class="des pt-2">{!! html_entity_decode($product->summary) !!}</p>
-														<a href="javascript:void(0)" class="btn cart" data-id="{{$product->id}}">Buy Now!</a>
+														<a href="{{route('product-detail',$product->slug)}}" class="btn cart" data-id="{{$product->id}}">Buy Now!</a>
 													</div>
 												</div>
 											</div>

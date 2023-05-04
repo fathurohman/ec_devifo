@@ -180,7 +180,7 @@
                         </div>
                     </div>
                 </form>
-                <button id="pay-button" class="btn">pay button</button>
+                {{-- <button id="pay-button" class="btn">pay button</button> --}}
         </div>
     </section>
     <!--/ End Checkout -->
