@@ -289,12 +289,19 @@ class OrderController extends Controller
 
     public function listorder()
     {
-        if(Auth::user()->id){
-            $user_id = Auth::user()->id;
-        }
 
-        $order = Order::where('user_id', $user_id)->get();
-        $cekorder = Order::where('user_id', $user_id)->count();
+
+        if(Auth::user()){
+            $user_id = Auth::user()->id;
+            $order = Order::where('user_id', $user_id)->get();
+            $cekorder = Order::where('user_id', $user_id)->count();
+
+
+        }else{
+
+            $order = null;
+            $cekorder = 0;
+        }
 
 
 

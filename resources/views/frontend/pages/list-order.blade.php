@@ -24,7 +24,8 @@
 			<div class="row">
 				<div class="col-12">
 					<!-- Shopping Summery -->
-					<table class="table shopping-summery">
+                    @auth
+                    <table class="table shopping-summery">
 						<thead>
 							<tr class="main-hading">
                                 <th>NO</th>
@@ -71,6 +72,15 @@
 
 						</tbody>
 					</table>
+                    @else
+
+                    <p class="text-center p-5">
+                        You need to <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a>
+                        {{-- OR <a style="color:blue" href="{{route('register.form')}}">Register</a> --}}
+
+                    </p>
+                    @endauth
+
 					<!--/ End Shopping Summery -->
 				</div>
 			</div>

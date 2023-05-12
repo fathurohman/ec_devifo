@@ -102,6 +102,12 @@ class Helper{
             return 0;
         }
     }
+    //order count admin
+    public static function orderCountAdmin(){
+
+        return Order::where('payment_status', 'unpaid')->count();
+
+    }
     // relationship cart with product
     public function product(){
         return $this->hasOne('App\Models\Product','id','product_id');

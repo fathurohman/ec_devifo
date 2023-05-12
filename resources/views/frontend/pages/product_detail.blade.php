@@ -100,7 +100,7 @@
 											</div> --}}
 											<!--/ End Color -->
 											<!-- Size -->
-											@if($product_detail->size)
+											{{-- @if($product_detail->size)
 												<div class="size mt-4">
 													<h4>Size</h4>
 													<ul>
@@ -113,7 +113,7 @@
 														@endforeach
 													</ul>
 												</div>
-											@endif
+											@endif --}}
 											<!--/ End Size -->
 											<!-- Product Buy -->
 											<div class="product-buy">
@@ -140,7 +140,7 @@
 													</div>
 													<div class="add-to-cart mt-4">
 														<button type="submit" class="btn">Add to cart</button>
-														<a href="{{route('add-to-wishlist',$product_detail->slug)}}" class="btn min"><i class="ti-heart"></i></a>
+														{{-- <a href="{{route('add-to-wishlist',$product_detail->slug)}}" class="btn min"><i class="ti-heart"></i></a> --}}
 													</div>
 												</form>
 
@@ -234,7 +234,8 @@
 																</form>
 																@else
 																<p class="text-center p-5">
-																	You need to <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a> OR <a style="color:blue" href="{{route('register.form')}}">Register</a>
+																	You need to <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a>
+                                                                    {{-- OR <a style="color:blue" href="{{route('register.form')}}">Register</a> --}}
 
 																</p>
 																<!--/ End Form -->

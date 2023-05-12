@@ -16,7 +16,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Quantity</th>
-            <th>Charge</th>
+            {{-- <th>Charge</th> --}}
             <th>Total Amount</th>
             <th>Status</th>
             <th>Action</th>
@@ -29,8 +29,8 @@
             <td>{{$order->first_name}} {{$order->last_name}}</td>
             <td>{{$order->email}}</td>
             <td>{{$order->quantity}}</td>
-            <td>${{$order->shipping->price}}</td>
-            <td>${{number_format($order->total_amount,2)}}</td>
+            {{-- <td>${{$order->shipping->price}}</td> --}}
+            <td>Rp.{{number_format($order->total_amount)}}</td>
             <td>
                 @if($order->status=='new')
                   <span class="badge badge-primary">{{$order->status}}</span>
@@ -78,21 +78,21 @@
                         <td>Order Status</td>
                         <td> : {{$order->status}}</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <td>Shipping Charge</td>
                         <td> : $ {{$order->shipping->price}}</td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                       <td>Coupon</td>
-                      <td> : $ {{number_format($order->coupon,2)}}</td>
+                      <td> : Rp. {{number_format($order->coupon)}}</td>
                     </tr>
                     <tr>
                         <td>Total Amount</td>
-                        <td> : $ {{number_format($order->total_amount,2)}}</td>
+                        <td> : Rp. {{number_format($order->total_amount)}}</td>
                     </tr>
                     <tr>
                         <td>Payment Method</td>
-                        <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
+                        <td> : {{$order->payment_method}}</td>
                     </tr>
                     <tr>
                         <td>Payment Status</td>

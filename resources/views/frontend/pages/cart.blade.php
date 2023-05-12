@@ -21,7 +21,9 @@
 	<!-- Shopping Cart -->
 	<div class="shopping-cart section">
 		<div class="container">
-			<div class="row">
+
+            @auth
+            <div class="row">
 				<div class="col-12">
 					<!-- Shopping Summery -->
 					<table class="table shopping-summery">
@@ -155,6 +157,17 @@
 					<!--/ End Total Amount -->
 				</div>
 			</div>
+            @else
+
+            <p class="text-center p-5">
+                You need to <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a>
+                {{-- OR <a style="color:blue" href="{{route('register.form')}}">Register</a> --}}
+
+            </p>
+            @endauth
+
+
+
 		</div>
 	</div>
 	<!--/ End Shopping Cart -->

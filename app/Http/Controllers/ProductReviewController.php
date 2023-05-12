@@ -8,6 +8,8 @@ use Notification;
 use App\Notifications\StatusNotification;
 use App\User;
 use App\Models\ProductReview;
+use Auth;
+
 class ProductReviewController extends Controller
 {
     /**
@@ -18,7 +20,7 @@ class ProductReviewController extends Controller
     public function index()
     {
         $reviews=ProductReview::getAllReview();
-        
+
         return view('backend.review.index')->with('reviews',$reviews);
     }
 
@@ -29,7 +31,7 @@ class ProductReviewController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -40,6 +42,7 @@ class ProductReviewController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'rate'=>'required|numeric|min:1'
         ]);
@@ -51,7 +54,8 @@ class ProductReviewController extends Controller
         $data['user_id']=$request->user()->id;
         $data['status']='active';
         // dd($data);
-        $status=ProductReview::create($data);
+        // $status=ProductReview::create($data);
+        $cek = ProductReview::where('user_id', $request->user()->id)->where('product_id',$product_info->id)->count();
 
         $user=User::where('role','admin')->get();
         $details=[
@@ -60,12 +64,17 @@ class ProductReviewController extends Controller
             'fas'=>'fa-star'
         ];
         Notification::send($user,new StatusNotification($details));
-        if($status){
+        if($cek == 0){
+            $status=ProductReview::create($data);
             request()->session()->flash('success','Thank you for your feedback');
         }
         else{
             request()->session()->flash('error','Something went wrong! Please try again!!');
         }
+
+
+
+
         return redirect()->back();
     }
 
