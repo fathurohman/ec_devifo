@@ -30,16 +30,16 @@
       </li>
 
       {{-- Home page --}}
-      <li class="nav-item dropdown no-arrow mx-1">
+      {{-- <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="{{route('home')}}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="home"  role="button">
           <i class="fas fa-home fa-fw"></i>
         </a>
-      </li>
+      </li> --}}
 
       <!-- Nav Item - Alerts -->
-      <li class="nav-item dropdown no-arrow mx-1">
+      {{-- <li class="nav-item dropdown no-arrow mx-1">
        @include('backend.notification.show')
-      </li>
+      </li> --}}
 
       <!-- Nav Item - Messages -->
       {{-- <li class="nav-item dropdown no-arrow mx-1" id="messageT" data-url="{{route('messages.five')}}">

@@ -66,7 +66,7 @@
 											<!-- Description -->
 											<div class="short">
 												<h4>{{$product_detail->title}}</h4>
-												<div class="rating-main">
+												{{-- <div class="rating-main">
 													<ul class="rating">
 														@php
 															$rate=ceil($product_detail->getReview->avg('rate'))
@@ -80,7 +80,7 @@
 															@endfor
 													</ul>
 													<a href="#" class="total-review">({{$product_detail['getReview']->count()}}) Review</a>
-                                                </div>
+                                                </div> --}}
                                                 @php
                                                     $after_discount=($product_detail->price-(($product_detail->price*$product_detail->discount)/100));
                                                 @endphp
@@ -119,7 +119,7 @@
 											<div class="product-buy">
 												<form action="{{route('single-add-to-cart')}}" method="POST">
 													@csrf
-													<div class="quantity">
+													{{-- <div class="quantity">
 														<h6>Quantity :</h6>
 														<!-- Input Order -->
 														<div class="input-group">
@@ -137,9 +137,11 @@
 															</div>
 														</div>
 													<!--/ End Input Order -->
-													</div>
+													</div> --}}
 													<div class="add-to-cart mt-4">
-														<button type="submit" class="btn">Add to cart</button>
+														<a
+                                                        href="https://api.whatsapp.com/send?phone=6281287278696&text={{$product_detail->title}}"
+                                                        target="_blank" class="btn">Order via WhatsApp</a>
 														{{-- <a href="{{route('add-to-wishlist',$product_detail->slug)}}" class="btn min"><i class="ti-heart"></i></a> --}}
 													</div>
 												</form>
@@ -154,7 +156,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								{{-- <div class="row">
 									<div class="col-12">
 										<div class="product-info">
 											<div class="nav-main">
@@ -235,7 +237,7 @@
 																@else
 																<p class="text-center p-5">
 																	You need to <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a>
-                                                                    {{-- OR <a style="color:blue" href="{{route('register.form')}}">Register</a> --}}
+                                                                    {{-- OR <a style="color:blue" href="{{route('register.form')}}">Register</a>
 
 																</p>
 																<!--/ End Form -->
@@ -250,7 +252,7 @@
 																			foreach($product_detail->rate as $key=>$rate){
 																				$rate +=$rate
 																			}
-																		@endphp --}}
+																		@endphp
 																		<h4>{{ceil($product_detail->getReview->avg('rate'))}} <span>(Overall)</span></h4>
 																		<span>Based on {{$product_detail->getReview->count()}} Comments</span>
 																	</div>
@@ -296,7 +298,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 					</div>
@@ -304,7 +306,7 @@
 		<!--/ End Shop Single -->
 
 		<!-- Start Most Popular -->
-	<div class="product-area most-popular related-product section">
+	{{-- <div class="product-area most-popular related-product section">
         <div class="container">
             <div class="row">
 				<div class="col-12">
@@ -314,7 +316,7 @@
 				</div>
             </div>
             <div class="row">
-                {{-- {{$product_detail->rel_prods}} --}}
+                {{-- {{$product_detail->rel_prods}}
                 <div class="col-12">
                     <div class="owl-carousel popular-slider">
                         @foreach($product_detail->rel_prods as $data)
@@ -329,7 +331,7 @@
                                             <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                             <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                             <span class="price-dec">{{$data->discount}} % Off</span>
-                                                                    {{-- <span class="out-of-stock">Hot</span> --}}
+                                                                    {{-- <span class="out-of-stock">Hot</span>
                                         </a>
                                         <div class="button-head">
                                             <div class="product-action">
@@ -362,7 +364,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 	<!-- End Most Popular Area -->
 
 

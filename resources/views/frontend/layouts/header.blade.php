@@ -1,6 +1,6 @@
 <header class="header shop">
     <!-- Topbar -->
-    <div class="topbar">
+    {{-- <div class="topbar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-12">
@@ -21,7 +21,7 @@
                     <!-- Top Right -->
                     <div class="right-content">
                         <ul class="list-main">
-                        {{-- <li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Track Order</a></li> --}}
+                        {{-- <li><i class="ti-location-pin"></i> <a href="{{route('order.track')}}">Track Order</a></li>
                             @auth
                                 <li><i class="ti-user"></i>{{Auth::user()->name}}</li>
                                 @if(Auth::user()->role=='admin')
@@ -34,7 +34,7 @@
 
                             @else
                                 <li><i class="ti-power-off"></i><a href="{{route('login.form')}}">Login</a>
-                                    {{-- <a href="{{route('register.form')}}">Register</a> --}}
+                                    {{-- <a href="{{route('register.form')}}">Register</a>
                                 </li>
                             @endauth
                         </ul>
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- End Topbar -->
     <div class="middle-inner">
         <div class="container">
@@ -138,14 +138,14 @@
                             @endauth
                             <!--/ End Shopping Item -->
                         </div> --}}
-                        <div class="sinlge-bar shopping">
+                        {{-- <div class="sinlge-bar shopping">
                             <a href="{{route('list.order')}}" class="single-icon"><i class="ti-wallet"></i> <span class="total-count">{{Helper::orderCount()}}</span></a>
 
-                        </div>
+                        </div> --}}
                         {{-- <div class="sinlge-bar">
                             <a href="{{route('wishlist')}}" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                         </div> --}}
-                        <div class="sinlge-bar shopping">
+                        {{-- <div class="sinlge-bar shopping">
                             <a href="{{route('cart')}}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{Helper::cartCount()}}</span></a>
                             <!-- Shopping Item -->
                             @auth
@@ -155,7 +155,7 @@
                                         <a href="{{route('cart')}}">View Cart</a>
                                     </div>
                                     <ul class="shopping-list">
-                                        {{-- {{Helper::getAllProductFromCart()}} --}}
+                                        {{-- {{Helper::getAllProductFromCart()}}
                                             @foreach(Helper::getAllProductFromCart() as $data)
                                                     @php
                                                         $photo=explode(',',$data->product['photo']);
@@ -178,7 +178,7 @@
                                 </div>
                             @endauth
                             <!--/ End Shopping Item -->
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
