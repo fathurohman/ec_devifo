@@ -114,19 +114,19 @@
     </li> --}}
 
     <!--Orders -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{route('order.index')}}">
             <i class="fas fa-hammer fa-chart-area"></i>
             <span>Orders</span>
         </a>
-    </li>
+    </li> --}}
 
     <!-- Reviews -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{route('review.index')}}">
             <i class="fas fa-comments"></i>
             <span>Reviews</span></a>
-    </li>
+    </li> --}}
 
 
     <!-- Divider -->
@@ -197,11 +197,11 @@
     <div class="sidebar-heading">
         General Settings
     </div>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
       <a class="nav-link" href="{{route('coupon.index')}}">
           <i class="fas fa-table"></i>
           <span>Coupon</span></a>
-    </li>
+    </li> --}}
      <!-- Users -->
      <li class="nav-item">
         <a class="nav-link" href="{{route('users.index')}}">

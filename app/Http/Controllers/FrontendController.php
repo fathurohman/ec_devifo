@@ -9,6 +9,7 @@ use App\Models\PostCategory;
 use App\Models\Post;
 use App\Models\Cart;
 use App\Models\Brand;
+use App\Models\Settings;
 use App\User;
 use Auth;
 use Session;
@@ -50,8 +51,9 @@ class FrontendController extends Controller
 
     public function productDetail($slug){
         $product_detail= Product::getProductBySlug($slug);
+        $settings = Settings::get();
         // dd($product_detail);
-        return view('frontend.pages.product_detail')->with('product_detail',$product_detail);
+        return view('frontend.pages.product_detail')->with('product_detail',$product_detail)->with('settings',$settings);
     }
 
     public function productGrids(){

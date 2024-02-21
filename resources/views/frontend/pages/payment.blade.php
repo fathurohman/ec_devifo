@@ -31,7 +31,7 @@
                         <h2>CART  TOTALS</h2>
                         <div class="content">
                             <ul>
-                                <li class="order_subtotal" >Cart Subtotal<span>Rp. {{number_format($order->total_amount)}}</span></li>
+                                <li style="font-size: 20px" class="order_subtotal" >Cart Subtotal<span>Rp. {{number_format($order->total_amount)}}</span></li>
 
 
                             </ul>

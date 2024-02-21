@@ -52,7 +52,7 @@
                                             <a class="btn" href="{{route('order.pay', $item->id)}}">pay</a>
                                             <a class="btn" href="{{route('delete.order',$item->id)}}">Remove</a>
                                         @else
-                                            <a class="btn" href="{{$item->fr_url}}"> Print</a>
+                                            {{-- <a class="btn" href="{{$item->fr_url}}"> Print</a> --}}
                                         @endif
 
 

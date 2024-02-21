@@ -139,9 +139,11 @@
 													<!--/ End Input Order -->
 													</div> --}}
 													<div class="add-to-cart mt-4">
+														@foreach($settings as $data)  
 														<a
-                                                        href="https://api.whatsapp.com/send?phone=6281287278696&text={{$product_detail->title}}"
+                                                        href="https://api.whatsapp.com/send?phone={{$data->phone}}&text=Nama produk : {{$product_detail->title}} | Kategori : {{$product_detail->cat_info['title']}}"
                                                         target="_blank" class="btn">Order via WhatsApp</a>
+														@endforeach
 														{{-- <a href="{{route('add-to-wishlist',$product_detail->slug)}}" class="btn min"><i class="ti-heart"></i></a> --}}
 													</div>
 												</form>
