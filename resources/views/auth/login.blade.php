@@ -24,7 +24,7 @@
               <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <img width="80%" src="{{asset('images/devifo.jpg')}}" /><br><br>
+                    <img width="80%" src="{{asset('storage/photos/1/devifo/devifo.jpg')}}" /><br><br>
                     <h1 class="h4 text-gray-900 mb-4">Administrator Login</h1>
                   </div>
                   <form class="user"  method="POST" action="{{ route('login') }}">

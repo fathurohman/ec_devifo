@@ -7,15 +7,18 @@
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-6">
 						<!-- Single Widget -->
+						@php
+								$settings=DB::table('settings')->get();
+							@endphp
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="index.html"><img width="50%" src="{{asset('images/devifo.jpg')}}" alt="#"></a>
+								<a href="index.html"><img width="50%" src="{{asset('storage/photos/1/devifo/logodevifohd.jpg')}}" alt="#"></a>
 							</div>
 							@php
 								$settings=DB::table('settings')->get();
 							@endphp
 							<p style="text-align: justify" class="text">@foreach($settings as $data) {{$data->short_des}} @endforeach</p>
-							<p class="call">Got Question?<span>@foreach($settings as $data)<a target="_blank" href="https://wa.me/{{$data->phone}}"> {{$data->phone}} </a>@endforeach</span></p>
+							<p class="call"><span>@foreach($settings as $data)<a target="_blank" href="https://wa.me/{{$data->phone}}"> {{$data->phone}} </a>@endforeach</span></p>
 						</div>
 						<!-- End Single Widget -->
 					</div>
